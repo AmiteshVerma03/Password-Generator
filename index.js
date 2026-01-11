@@ -17,3 +17,23 @@ const symbols = [
   ',', '.', '<','>','?',
   '/','~','`'
 ];
+const merged=[...lowercase,...numbers,...symbols,...uppercase];
+// let random=Math.random();
+let Generate=document.getElementById("generate");
+let password1=document.getElementById("first");
+let password2=document.getElementById("second");
+function create(){
+    let text1="";
+    for(let i=0;i<10;i++){
+        let x=Math.floor(Math.random()*93);
+        text1=text1+merged[x];
+    }
+    password1.textContent=text1;
+    let text2="";
+    for(let i=0;i<10;i++){
+        let x=Math.floor(Math.random()*93);
+        text2=text2+merged[x];
+    }
+    password2.textContent=text2;
+}
+Generate.addEventListener("click",create);
